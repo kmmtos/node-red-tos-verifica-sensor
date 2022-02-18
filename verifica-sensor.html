@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    RED.nodes.registerType('verificaSensorTOS',{
+        category: 'tos',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:3,
+        icon: "file.png",
+        label: function() {
+            return this.name||"verificaSensorTOS";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="verificaSensorTOS">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="verificaSensorTOS">
+    <p>Cancela TOS</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>msg
+            <span class="property-type">string</span>
+        </dt>
+        <dd> teste </dd>
+        <p><code>msg.operacao</code> Indica o modo de operacao a verificar. "ATIVADO" = Sensor ativado(true) "DESATIVADO" = sensor desativado 
+            "ATIVADO_DESATIVADO" = Sensor ativado(true) e depois desativado(false)
+            "DESATIVADO_ATIVADO" = Sensor desativado(false) e depois desativado(true) </p>
+        
+        <p><code>msg.intervalo_verificacao</code> Indica o intervalo em ms para verificação do estado do sensor</p>
+        <p><code>msg.quantidade_amostra</code> Indica a quantidade de vezes que o sensor deve atender a condição de acordo com operação</p>
+        <p><code>msg.tentativas</code> Indica o numero maximo de tentativas de verificação para satisfazer a condição de acordo com operação</p>
+        <p><code>msg.sensor</code> Indica a variavel do sensor global para verificação</p>
+        
+        
+        
+
+    </dl>
+
+    <h3>Outputs</h3>
+     <ol class="node-ports">
+         <li>done
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">boolean</span></dt>
+                 <dd>true. Indica foi satisfeita a regra solicitada</dd>
+             </dl>
+         </li>
+         <li>timeout
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">boolean</span></dt>
+                 <dd>Indica que esgotou o numero de tentativas de verificação e a condição não foi atendida.</dd>
+             </dl>
+         </li>
+         <li>error
+            <dl class="message-properties">
+                <dt>payload <span class="property-type">string</span></dt>
+                <dd>Indica erros ocorridos.</dd>
+            </dl>
+        </li>
+     </ol>
+
+
+</script>

@@ -1,0 +1,23 @@
+{
+  "name": "@kmmtos/node-red-tos-verifica-sensor",
+  "version": "1.0.0",
+  "description": "Verifica sensores",
+  "main": "verifica-sensor.js",
+  "repository":{
+    "url" : "https://github.com/kmmtos/node-red-tos-verifica-sensor.git"
+ },
+ "publishConfig": {
+   "registry": "https://npm.pkg.github.com/@kmmtos"
+ },
+
+  "node-red" : {
+    "nodes": {
+        "verificaSensorTOS": "verifica-sensor.js"
+    }
+},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ebermor",
+  "license": "ISC"
+}
