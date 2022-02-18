@@ -148,5 +148,5 @@ module.exports = function (RED) {
       done();
     });
   }
-  RED.nodes.registerType("verificaSensorTOS", verificaSensorTOS);
+  RED.nodes.registerType("verifica sensor TOS", verificaSensorTOS);
 };
