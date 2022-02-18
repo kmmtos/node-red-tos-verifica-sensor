@@ -140,8 +140,6 @@ module.exports = function (RED) {
       }
     });
     this.on("close", function (removed, done) {
-      // removed not used
-
       clearTimeout(st);
       node.status({});
 
