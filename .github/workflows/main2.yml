@@ -15,7 +15,7 @@ jobs:
         switches: -avzr --delete
         path: teste/
         remote_path: /home/devtos/eberson/
-        remote_host: 168.138.141.229
-        remote_user: secrets.SSH_USER
+        remote_host:${{ secrets.SSH_HOST }}
+        remote_user:${{ secrets.SSH_USER }}
         remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
