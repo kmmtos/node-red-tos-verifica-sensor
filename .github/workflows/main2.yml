@@ -1,4 +1,4 @@
-name: teste_sinc
+name: teste_sync
 
 on:
   push:
