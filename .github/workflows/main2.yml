@@ -17,5 +17,5 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts    
         
       - name: Deploy with rsync
-        run: rsync -avz verifica-sensor.j ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/devtos/eberson/
+        run: rsync -avz verifica-sensor.js ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/devtos/eberson/
       
